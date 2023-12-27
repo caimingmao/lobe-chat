@@ -9,6 +9,7 @@ import { DESKTOP_HEADER_ICON_SIZE } from '@/const/layoutTokens';
 import { useSessionStore } from '@/store/session';
 
 import SessionSearchBar from '../../features/SessionSearchBar';
+import { Logox } from '@/components/ui/logo';
 
 export const useStyles = createStyles(({ css, token }) => ({
   logo: css`
@@ -17,6 +18,7 @@ export const useStyles = createStyles(({ css, token }) => ({
   top: css`
     position: sticky;
     top: 0;
+    box-shadow: 0px 1px 5px 2px #ccc;
   `,
 }));
 
@@ -28,7 +30,7 @@ const Header = memo(() => {
   return (
     <Flexbox className={styles.top} gap={16} padding={16}>
       <Flexbox distribution={'space-between'} horizontal>
-        <Logo className={styles.logo} size={36} type={'text'} />
+        <Logox label={'TOOLBOSS'} size={'24px'} />
         <ActionIcon
           icon={MessageSquarePlus}
           onClick={() => createSession()}
@@ -37,7 +39,6 @@ const Header = memo(() => {
           title={t('newAgent')}
         />
       </Flexbox>
-      <SessionSearchBar />
     </Flexbox>
   );
 });

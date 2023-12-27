@@ -15,7 +15,6 @@ import { pathString } from '@/utils/url';
 
 import PluginTag from '../../features/ChatHeader/PluginTag';
 import SettingButton from '../../features/ChatHeader/SettingButton';
-import ShareButton from '../../features/ChatHeader/ShareButton';
 
 const Left = memo(() => {
   const { t } = useTranslation('chat');
@@ -83,7 +82,6 @@ const Right = memo(() => {
 
   return (
     <>
-      <ShareButton />
       <ActionIcon
         icon={showAgentSettings ? PanelRightClose : PanelRightOpen}
         onClick={() => toggleConfig()}

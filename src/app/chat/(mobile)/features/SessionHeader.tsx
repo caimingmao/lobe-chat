@@ -7,6 +7,8 @@ import { memo } from 'react';
 import { MOBILE_HEADER_ICON_SIZE } from '@/const/layoutTokens';
 import { useGlobalStore } from '@/store/global';
 import { useSessionStore } from '@/store/session';
+import { Logox } from '@/components/ui/logo';
+import { UserButton } from '@clerk/nextjs';
 
 export const useStyles = createStyles(({ css, token }) => ({
   logo: css`
@@ -24,12 +26,8 @@ const Header = memo(() => {
   const avatar = useGlobalStore((st) => st.settings.avatar);
   return (
     <MobileNavBar
-      center={<Logo type={'text'} />}
-      left={
-        <div onClick={() => router.push('/settings')} style={{ marginLeft: 8 }}>
-          {avatar ? <Avatar avatar={avatar} size={28} /> : <Logo size={28} />}
-        </div>
-      }
+      center={<Logox label={'TOOLBOSS'} size={'24px'} />}
+      left={<UserButton afterSignOutUrl="/"/>}
       right={
         <ActionIcon
           icon={MessageSquarePlus}
@@ -37,6 +35,7 @@ const Header = memo(() => {
           size={MOBILE_HEADER_ICON_SIZE}
         />
       }
+      style={{ boxShadow: "0px 1px 5px 2px #ccc" }}
     />
   );
 });

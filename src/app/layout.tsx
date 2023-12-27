@@ -12,6 +12,7 @@ import {
 import Layout from '@/layout/GlobalLayout';
 
 import StyleRegistry from './StyleRegistry';
+import { ClerkProvider } from '@clerk/nextjs';
 
 const RootLayout = ({ children }: PropsWithChildren) => {
   // get default theme config to use with ssr
@@ -22,6 +23,7 @@ const RootLayout = ({ children }: PropsWithChildren) => {
   const lang = cookieStore.get(LOBE_LOCALE_COOKIE);
 
   return (
+    <ClerkProvider>
     <html lang={lang?.value || DEFAULT_LANG} suppressHydrationWarning>
       <body>
         <StyleRegistry>
@@ -37,6 +39,7 @@ const RootLayout = ({ children }: PropsWithChildren) => {
         <Analytics />
       </body>
     </html>
+    </ClerkProvider>
   );
 };
 

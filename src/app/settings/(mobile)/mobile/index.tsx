@@ -41,10 +41,10 @@ const Setting = memo(() => {
       <div style={{ width: '100%' }}>
         <List />
         <div className={styles.divider} />
-        <ExtraList />
+        {/* <ExtraList /> */}
         <Center style={{ paddingInline: 64 }}>
           <Divider>
-            <span className={styles.footer}>LobeChat v{CURRENT_VERSION}</span>
+            <span className={styles.footer}>Powered By LobeChat v{CURRENT_VERSION}</span>
           </Divider>
         </Center>
       </div>
