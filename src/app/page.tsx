@@ -1,10 +1,12 @@
 import Page from './home';
 import Redirect from './home/Redirect';
+import LandingPage from './home/landing';
 
 const Index = () => (
   <>
-    <Page />
-    <Redirect />
+    {/* <Page />
+    <Redirect /> */}
+    <LandingPage />
   </>
 );
 
