@@ -1,6 +1,7 @@
 import { Viewport } from 'next';
 import { cookies } from 'next/headers';
 import { PropsWithChildren } from 'react';
+import './globals.css'
 
 import Analytics from '@/components/Analytics';
 import { DEFAULT_LANG, LOBE_LOCALE_COOKIE } from '@/const/locale';

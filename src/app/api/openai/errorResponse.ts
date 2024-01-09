@@ -3,6 +3,7 @@ import { ChatErrorType, ErrorResponse, ErrorType } from '@/types/fetch';
 const getStatus = (errorType: ErrorType) => {
   switch (errorType) {
     case ChatErrorType.NoAPIKey:
+    case ChatErrorType.BalanceNotEnough:
     case ChatErrorType.InvalidAccessCode: {
       return 401;
     }

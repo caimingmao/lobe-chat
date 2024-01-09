@@ -6,7 +6,6 @@ export interface WechatPayPayload {
     pay_type?: string;
     price: number;
     order_id: string;
-    order_uid: string;
     notify_url?: string;
     sign?: string;
 }
@@ -35,8 +34,12 @@ export const generateNativePayQR = async (payload: WechatPayPayload): Promise<We
         payload.notify_url = 'http://www.toolboss.vip/notifyfromxorpay';
         payload.pay_type = 'native';
         payload.sign = getSign(payload);
-        const response = await axios.post(API, payload);
+        let query_string = Object.entries(payload).map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`).join('&');
+        const response = await axios.post(API + '?' + query_string);
+        console.log('---------------');
+        console.log(payload);
         console.log(response.data);
+        console.log('---------------');
         if (response.data.status == 'ok') {
             wechatPayResponse.status = 'success';
             wechatPayResponse.qr = response.data.info.qr;
@@ -47,7 +50,7 @@ export const generateNativePayQR = async (payload: WechatPayPayload): Promise<We
     } catch (error) {
         console.error('Error:', error);
         wechatPayResponse.status = 'failed';
-        wechatPayResponse.error_msg = ;
+        wechatPayResponse.error_msg = '';
     }
 
     return wechatPayResponse;
