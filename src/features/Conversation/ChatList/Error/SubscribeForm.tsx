@@ -27,6 +27,9 @@ const SubscribeForm = memo<{ id: string }>(({ id }) => {
         let ret = await prepareSubscribePay(type) as WechatPayResponse;
         console.log('================');
         console.log(ret);
+        if (ret.status === 'failed') {
+            return;
+        }
         setWechatPayQRCode('https://xorpay.com/qr?data=' + ret.qr);
         document.getElementById('my_modal_2').showModal();
     };
