@@ -50,11 +50,11 @@ COPY --from=sharp --chown=nextjs:nodejs /app/node_modules/.pnpm ./node_modules/.
 
 USER nextjs
 
-EXPOSE 3210
+EXPOSE 3218
 
 # set hostname to localhost
 ENV HOSTNAME "0.0.0.0"
-ENV PORT=3210
+ENV PORT=3218
 
 # General Variables
 ENV ACCESS_CODE "lobe66"
