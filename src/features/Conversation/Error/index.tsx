@@ -8,6 +8,8 @@ import OpenAPIKey from './OpenAPIKey';
 import OpenAiBizError from './OpenAiBizError';
 import PluginError from './Plugin/PluginError';
 import PluginSettings from './Plugin/PluginSettings';
+import Subscribe from './Subscribe';
+
 
 export const renderErrorMessages: Record<string, RenderErrorMessage> = {
   [PluginErrorType.PluginMarketIndexNotFound]: {
@@ -69,6 +71,14 @@ export const renderErrorMessages: Record<string, RenderErrorMessage> = {
   },
   [ChatErrorType.OpenAIBizError]: {
     Render: OpenAiBizError,
+    config: {
+      extraDefaultExpand: true,
+      extraIsolate: true,
+      type: 'warning',
+    },
+  },
+  [ChatErrorType.BalanceNotEnough]: {
+    Render: Subscribe,
     config: {
       extraDefaultExpand: true,
       extraIsolate: true,

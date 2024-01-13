@@ -19,7 +19,7 @@ export default memo<SettingsCommonProps>((props) => {
     <>
       <PageTitle title={t('tab.common')} />
       <Common {...props} />
-      <Footer>LobeChat v{CURRENT_VERSION}</Footer>
+      <Footer>Powered By LobeChat v{CURRENT_VERSION}</Footer>
     </>
   );
 });
