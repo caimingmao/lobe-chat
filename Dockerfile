@@ -22,9 +22,7 @@ COPY package.json ./
 
 # If you want to build docker in China
 # RUN npm config set registry https://registry.npmmirror.com/
-# RUN pnpm i
-RUN curl -fsSL https://bun.sh/install | bash
-RUN bun install
+RUN pnpm i
 
 COPY . .
 RUN bun run build:docker # run build standalone for docker version
