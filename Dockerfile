@@ -25,7 +25,7 @@ COPY package.json ./
 RUN pnpm i
 
 COPY . .
-RUN bun run build:docker # run build standalone for docker version
+RUN pnpm run build:docker # run build standalone for docker version
 
 ## Production image, copy all the files and run next
 FROM base AS runner
@@ -57,7 +57,7 @@ ENV HOSTNAME "0.0.0.0"
 ENV PORT=3218
 
 # General Variables
-ENV ACCESS_CODE "lobe66"
+ENV ACCESS_CODE ""
 ENV CUSTOM_MODELS ""
 
 # OpenAI
