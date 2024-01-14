@@ -84,43 +84,43 @@ const Common = memo<SettingsCommonProps>(({ showAccessCodeConfig }) => {
 
   const theme: SettingItemGroup = {
     children: [
-      {
-        children: <AvatarWithUpload />,
-        label: t('settingTheme.avatar.title'),
-        minWidth: undefined,
-      },
-      {
-        children: (
-          <SelectWithImg
-            defaultValue={settings.themeMode}
-            height={60}
-            onChange={setThemeMode}
-            options={[
-              {
-                icon: Sun,
-                img: '/images/theme_light.webp',
-                label: t('settingTheme.themeMode.light'),
-                value: 'light',
-              },
-              {
-                icon: Moon,
-                img: '/images/theme_dark.webp',
-                label: t('settingTheme.themeMode.dark'),
-                value: 'dark',
-              },
-              {
-                icon: Monitor,
-                img: '/images/theme_auto.webp',
-                label: t('settingTheme.themeMode.auto'),
-                value: 'auto',
-              },
-            ]}
-            width={100}
-          />
-        ),
-        label: t('settingTheme.themeMode.title'),
-        minWidth: undefined,
-      },
+      // {
+      //   children: <AvatarWithUpload />,
+      //   label: t('settingTheme.avatar.title'),
+      //   minWidth: undefined,
+      // },
+      // {
+      //   children: (
+      //     <SelectWithImg
+      //       defaultValue={settings.themeMode}
+      //       height={60}
+      //       onChange={setThemeMode}
+      //       options={[
+      //         {
+      //           icon: Sun,
+      //           img: '/images/theme_light.webp',
+      //           label: t('settingTheme.themeMode.light'),
+      //           value: 'light',
+      //         },
+      //         {
+      //           icon: Moon,
+      //           img: '/images/theme_dark.webp',
+      //           label: t('settingTheme.themeMode.dark'),
+      //           value: 'dark',
+      //         },
+      //         {
+      //           icon: Monitor,
+      //           img: '/images/theme_auto.webp',
+      //           label: t('settingTheme.themeMode.auto'),
+      //           value: 'auto',
+      //         },
+      //       ]}
+      //       width={100}
+      //     />
+      //   ),
+      //   label: t('settingTheme.themeMode.title'),
+      //   minWidth: undefined,
+      // },
       {
         children: (
           <Select
@@ -131,50 +131,50 @@ const Common = memo<SettingsCommonProps>(({ showAccessCodeConfig }) => {
         label: t('settingTheme.lang.title'),
         name: 'language',
       },
-      {
-        children: (
-          <SliderWithInput
-            marks={{
-              12: {
-                label: t('settingTheme.fontSize.marks.small'),
-                style: {
-                  marginTop: 4,
-                },
-              },
-              14: {
-                label: t('settingTheme.fontSize.marks.normal'),
-                style: {
-                  marginTop: 4,
-                },
-              },
-              18: {
-                label: t('settingTheme.fontSize.marks.large'),
-                style: {
-                  marginTop: 4,
-                },
-              },
-            }}
-            max={18}
-            min={12}
-            step={1}
-          />
-        ),
-        desc: t('settingTheme.fontSize.desc'),
-        label: t('settingTheme.fontSize.title'),
-        name: 'fontSize',
-      },
-      {
-        children: <ThemeSwatchesPrimary />,
-        desc: t('settingTheme.primaryColor.desc'),
-        label: t('settingTheme.primaryColor.title'),
-        minWidth: undefined,
-      },
-      {
-        children: <ThemeSwatchesNeutral />,
-        desc: t('settingTheme.neutralColor.desc'),
-        label: t('settingTheme.neutralColor.title'),
-        minWidth: undefined,
-      },
+      // {
+      //   children: (
+      //     <SliderWithInput
+      //       marks={{
+      //         12: {
+      //           label: t('settingTheme.fontSize.marks.small'),
+      //           style: {
+      //             marginTop: 4,
+      //           },
+      //         },
+      //         14: {
+      //           label: t('settingTheme.fontSize.marks.normal'),
+      //           style: {
+      //             marginTop: 4,
+      //           },
+      //         },
+      //         18: {
+      //           label: t('settingTheme.fontSize.marks.large'),
+      //           style: {
+      //             marginTop: 4,
+      //           },
+      //         },
+      //       }}
+      //       max={18}
+      //       min={12}
+      //       step={1}
+      //     />
+      //   ),
+      //   desc: t('settingTheme.fontSize.desc'),
+      //   label: t('settingTheme.fontSize.title'),
+      //   name: 'fontSize',
+      // },
+      // {
+      //   children: <ThemeSwatchesPrimary />,
+      //   desc: t('settingTheme.primaryColor.desc'),
+      //   label: t('settingTheme.primaryColor.title'),
+      //   minWidth: undefined,
+      // },
+      // {
+      //   children: <ThemeSwatchesNeutral />,
+      //   desc: t('settingTheme.neutralColor.desc'),
+      //   label: t('settingTheme.neutralColor.title'),
+      //   minWidth: undefined,
+      // },
     ],
     icon: Palette,
     title: t('settingTheme.title'),

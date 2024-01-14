@@ -16,7 +16,8 @@ import { createOpenai } from './createOpenai';
 export const createBizOpenAI = (req: Request, model: string): Response | OpenAI => {
   const { apiKey, accessCode, endpoint, useAzure, apiVersion } = getOpenAIAuthFromRequest(req);
 
-  const result = checkAuth({ accessCode, apiKey });
+  console.log(accessCode);
+  const result = checkAuth();
 
   if (!result.auth) {
     return createErrorResponse(result.error as ErrorType);

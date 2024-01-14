@@ -31,7 +31,6 @@ const MobileHeader = memo(() => {
       onBackClick={() => router.push('/chat')}
       right={
         <>
-          <ShareButton mobile open={open} setOpen={setOpen} />
           <SettingButton mobile />
           {/*<Dropdown*/}
           {/*  menu={{*/}

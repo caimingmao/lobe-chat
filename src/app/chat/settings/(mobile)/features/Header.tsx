@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 import HeaderContent from '@/app/chat/settings/features/HeaderContent';
 import { pathString } from '@/utils/url';
+import { Logox } from '@/components/ui/logo';
 
 const Header = memo(() => {
   const { t } = useTranslation('setting');
@@ -12,7 +13,7 @@ const Header = memo(() => {
 
   return (
     <MobileNavBar
-      center={<MobileNavBarTitle title={t('header.session')} />}
+      center={<Logox label={'TOOLBOSS'} size={'24px'} />}
       onBackClick={() => router.push(pathString('/chat/mobile', { hash: location.hash }))}
       right={<HeaderContent />}
       showBackButton
