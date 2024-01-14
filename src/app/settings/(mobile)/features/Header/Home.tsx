@@ -1,5 +1,5 @@
 import { Logox } from '@/components/ui/logo';
-import { Logo, MobileNavBar } from '@lobehub/ui';
+import { MobileNavBar } from '@lobehub/ui';
 import { memo } from 'react';
 
 const Header = memo(() => {

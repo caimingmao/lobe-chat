@@ -8,7 +8,7 @@ import { nanoid } from '@/utils/uuid';
 
 export interface CreateMessageParams
   extends Partial<Omit<ChatMessage, 'content' | 'role'>>,
-    Pick<ChatMessage, 'content' | 'role'> {
+  Pick<ChatMessage, 'content' | 'role'> {
   fromModel?: string;
   sessionId: string;
 }
@@ -49,11 +49,11 @@ class _MessageModel extends BaseModel {
     const query =
       topicId !== undefined
         ? // TODO: The query {"sessionId":"xxx","topicId":"xxx"} on messages would benefit of a compound index [sessionId+topicId]
-          this.table.where({ sessionId, topicId }) // Use a compound index
+        this.table.where({ sessionId, topicId }) // Use a compound index
         : this.table
-            .where('sessionId')
-            .equals(sessionId)
-            .and((message) => !message.topicId);
+          .where('sessionId')
+          .equals(sessionId)
+          .and((message) => !message.topicId);
 
     const dbMessages: DBModel<DB_Message>[] = await query
       .sortBy('createdAt')
@@ -147,9 +147,9 @@ class _MessageModel extends BaseModel {
       topicId !== undefined
         ? this.table.where({ sessionId, topicId }) // Use a compound index
         : this.table
-            .where('sessionId')
-            .equals(sessionId)
-            .and((message) => message.topicId === undefined);
+          .where('sessionId')
+          .equals(sessionId)
+          .and((message) => message.topicId === undefined);
 
     // Retrieve a collection of message IDs that satisfy the criteria
     const messageIds = await query.primaryKeys();
@@ -221,7 +221,7 @@ class _MessageModel extends BaseModel {
     tts,
     ...item
   }: DBModel<DB_Message>): ChatMessage => {
-    return { ...item, extra: { fromModel, translate, tts }, meta: {} };
+    return { ...item, extra: { fromModel, translate, tts }, meta: {} } as ChatMessage;
   };
 }
 

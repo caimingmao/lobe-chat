@@ -1,4 +1,4 @@
-import { ActionIcon, Logo } from '@lobehub/ui';
+import { ActionIcon } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import { MessageSquarePlus } from 'lucide-react';
 import { memo } from 'react';
@@ -8,7 +8,6 @@ import { Flexbox } from 'react-layout-kit';
 import { DESKTOP_HEADER_ICON_SIZE } from '@/const/layoutTokens';
 import { useSessionStore } from '@/store/session';
 
-import SessionSearchBar from '../../features/SessionSearchBar';
 import { Logox } from '@/components/ui/logo';
 
 export const useStyles = createStyles(({ css, token }) => ({

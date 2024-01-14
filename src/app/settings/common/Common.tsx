@@ -1,14 +1,13 @@
-import { Form, type ItemGroup, SelectWithImg, SliderWithInput } from '@lobehub/ui';
+import { Form, type ItemGroup } from '@lobehub/ui';
 import { Form as AntForm, App, Button, Input, Select } from 'antd';
 import isEqual from 'fast-deep-equal';
 import { debounce } from 'lodash-es';
-import { AppWindow, Monitor, Moon, Palette, Sun } from 'lucide-react';
+import { AppWindow, Palette } from 'lucide-react';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { FORM_STYLE } from '@/const/layoutTokens';
 import { DEFAULT_SETTINGS } from '@/const/settings';
-import AvatarWithUpload from '@/features/AvatarWithUpload';
 import { localeOptions } from '@/locales/resources';
 import { useChatStore } from '@/store/chat';
 import { useFileStore } from '@/store/file';
@@ -17,8 +16,6 @@ import { settingsSelectors } from '@/store/global/selectors';
 import { useSessionStore } from '@/store/session';
 import { useToolStore } from '@/store/tool';
 import { switchLang } from '@/utils/switchLang';
-
-import { ThemeSwatchesNeutral, ThemeSwatchesPrimary } from '../features/ThemeSwatches';
 
 type SettingItemGroup = ItemGroup;
 
@@ -39,8 +36,7 @@ const Common = memo<SettingsCommonProps>(({ showAccessCodeConfig }) => {
   const removeAllPlugins = useToolStore((s) => s.removeAllPlugins);
 
   const settings = useGlobalStore(settingsSelectors.currentSettings, isEqual);
-  const [setThemeMode, setSettings, resetSettings] = useGlobalStore((s) => [
-    s.switchThemeMode,
+  const [setSettings, resetSettings] = useGlobalStore((s) => [
     s.setSettings,
     s.resetSettings,
   ]);

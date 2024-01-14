@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 import { WechatPayResponse } from "@/lib/xorpay";
 import axios from "axios";
 import React, { memo, useState } from 'react';
@@ -31,7 +32,8 @@ const SubscribeForm = memo<{ id: string }>(({ id }) => {
             return;
         }
         setWechatPayQRCode('https://xorpay.com/qr?data=' + ret.qr);
-        document.getElementById('my_modal_2').showModal();
+        // eslint-disable-next-line unicorn/prefer-query-selector
+        document.getElementById('my_modal_2') !== null && (document.getElementById('my_modal_2')! as any).showModal();
     };
 
     return (
@@ -47,7 +49,7 @@ const SubscribeForm = memo<{ id: string }>(({ id }) => {
                             <dialog className="modal" id="my_modal_2">
                                 <div className="modal-box">
                                     <form method="dialog">
-                                        <a className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" onClick={() => document.getElementById('my_modal_2').close()}>✕</a>
+                                        <a className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" onClick={() => (document.querySelector('my_modal_2')! as any).close()}>✕</a>
                                     </form>
                                     <div className="avatar flex justify-center">
                                         <div className="w-48 rounded">

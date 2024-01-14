@@ -12,7 +12,6 @@ import { SidebarTabKey } from '@/store/global/initialState';
 
 import List from '../../features/SideBar/List';
 import AvatarBanner from '../features/AvatarBanner';
-import ExtraList from '../features/ExtraList';
 import Layout from './layout.mobile';
 
 const useStyles = createStyles(({ css, token }) => ({

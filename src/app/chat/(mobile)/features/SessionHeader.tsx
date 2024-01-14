@@ -1,11 +1,9 @@
-import { ActionIcon, Avatar, Logo, MobileNavBar } from '@lobehub/ui';
+import { ActionIcon, MobileNavBar } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import { MessageSquarePlus } from 'lucide-react';
-import { useRouter } from 'next/navigation';
 import { memo } from 'react';
 
 import { MOBILE_HEADER_ICON_SIZE } from '@/const/layoutTokens';
-import { useGlobalStore } from '@/store/global';
 import { useSessionStore } from '@/store/session';
 import { Logox } from '@/components/ui/logo';
 import { UserButton } from '@clerk/nextjs';
@@ -22,12 +20,12 @@ export const useStyles = createStyles(({ css, token }) => ({
 
 const Header = memo(() => {
   const [createSession] = useSessionStore((s) => [s.createSession]);
-  const router = useRouter();
-  const avatar = useGlobalStore((st) => st.settings.avatar);
+  // const router = useRouter();
+  // const avatar = useGlobalStore((st) => st.settings.avatar);
   return (
     <MobileNavBar
       center={<Logox label={'TOOLBOSS'} size={'24px'} />}
-      left={<UserButton afterSignOutUrl="/"/>}
+      left={<UserButton afterSignOutUrl="/" />}
       right={
         <ActionIcon
           icon={MessageSquarePlus}

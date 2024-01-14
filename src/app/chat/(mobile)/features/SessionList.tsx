@@ -4,9 +4,7 @@ import SessionListContent from '../../features/SessionListContent';
 
 const Sessions = memo(() => {
   return (
-    <>
-      <SessionListContent />
-    </>
+    <SessionListContent />
   );
 });
 

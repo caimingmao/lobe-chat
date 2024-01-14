@@ -4,10 +4,10 @@ interface LogoProps {
 }
 
 export const Logox = ({
-  label,size
+  label, size
 }: LogoProps) => {
   return (
-    <span style={{ fontSize:size, fontWeight:"bold", color:"purple", display:"inline-block" }}>
+    <span style={{ color: "purple", display: "inline-block", fontSize: size, fontWeight: "bold" }}>
       {label}
     </span>
   );

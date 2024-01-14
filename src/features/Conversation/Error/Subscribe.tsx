@@ -1,4 +1,4 @@
-import { RenderErrorMessage } from '@lobehub/ui';
+import { RenderErrorMessage } from '../types';
 import { memo } from 'react';
 
 import SubscribeForm from './SubscribeForm';

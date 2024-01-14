@@ -1,4 +1,4 @@
-import { ActionEvent, ActionIconGroup, type ActionIconGroupProps } from '@lobehub/ui';
+import { ActionIconGroup, type ActionIconGroupProps } from '@lobehub/ui';
 import isEqual from 'fast-deep-equal';
 import { memo, useCallback } from 'react';
 
@@ -9,6 +9,7 @@ import { agentSelectors } from '@/store/session/selectors';
 
 import { renderActions, useActionsClick } from '../../Actions';
 import { useChatListActionsBar } from '../../hooks/useChatListActionsBar';
+import { ActionEvent } from '@lobehub/ui/es/ActionIconGroup';
 
 export type ActionsBarProps = ActionIconGroupProps;
 
