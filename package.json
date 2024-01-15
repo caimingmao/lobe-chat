@@ -107,7 +107,6 @@
     "openai": "^4.17.3",
     "polished": "^4",
     "posthog-js": "^1",
-    "prisma": "^5.7.1",
     "query-string": "^8",
     "react": "^18",
     "react-dom": "^18",
@@ -138,6 +137,7 @@
     "zustand-utils": "^1"
   },
   "devDependencies": {
+    "prisma": "^5.7.1",
     "@commitlint/cli": "^18",
     "@ducanh2912/next-pwa": "^10",
     "@lobehub/i18n-cli": "latest",
