@@ -79,7 +79,6 @@
     "@lobehub/tts": "latest",
     "@lobehub/ui": "latest",
     "@prisma/client": "^5.7.1",
-    "@tailwindcss/typography": "tailwindcss/typography",
     "@vercel/analytics": "^1",
     "ahooks": "^3",
     "ai": "^2.2.22",
